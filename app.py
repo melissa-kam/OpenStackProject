@@ -20,7 +20,8 @@ class Root(object):
         params = get_params()
         return tmpl.render(params)
 
-cherrypy.config.update({'server.socket_host': '0.0.0.0',
-                        'server.socket_port': int(os.environ.get('PORT', '5000'))})
+cherrypy.config.update({
+    'server.socket_host': '0.0.0.0',
+    'server.socket_port': int(os.environ.get('PORT', '5000'))})
 
 cherrypy.quickstart(Root())
